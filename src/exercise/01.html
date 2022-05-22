@@ -6,10 +6,11 @@
   <body>
     <div id="root"></div>
     <script type="module">
-      document.createElement('div')
-      div.textContent = 'Hello World'
-      document.getElementById('root')
-      root.append('div')
+      const newDiv = document.createElement('div')
+      const rootDiv = document.getElementById('root')
+      newDiv.textContent = 'Hello World'
+      newDiv.className = 'container'
+      rootDiv.append(newDiv)
     </script>
   </body>
 </html>
