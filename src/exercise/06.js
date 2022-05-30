@@ -1,7 +1,7 @@
 // Basic Forms
 // http://localhost:3000/isolated/exercise/06.js
 
-import * as React from 'react'
+import React, {useState} from 'react'
 
 const UsernameForm = ({onSubmitUsername}) => {
   return (
