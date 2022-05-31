@@ -4,6 +4,14 @@
 import React, {useState} from 'react'
 
 const UsernameForm = ({onSubmitUsername}) => {
+  const [error, setError] = useState(null)
+
+  function changeErrorMsg(e) {
+    const value = e.target.value
+    const isLowerCase = value === value.toLowerCase()
+    setError(isLowerCase ? null : 'Username must be lower case')
+  }
+
   return (
     <form
       onSubmit={e => {
@@ -14,7 +22,8 @@ const UsernameForm = ({onSubmitUsername}) => {
     >
       <div>
         <label htmlFor="user">Username:</label>
-        <input name="user" type="text" />
+        <input name="user" type="text" onChange={changeErrorMsg} />
+        <div>{error}</div>
       </div>
       <button type="submit">Submit</button>
     </form>
